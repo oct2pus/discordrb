@@ -3899,7 +3899,7 @@ module Discordrb
     # @note This only uses data given by the audit logs request
     # @param id [#resolve_id] The webhook ID to look for
     def webhook(id)
-      @webhook[id.resolve_id]
+      @webhooks[id.resolve_id]
     end
 
     # Process user objects given by the request

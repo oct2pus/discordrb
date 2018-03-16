@@ -3760,11 +3760,10 @@ module Discordrb
         @target
       end
 
-      # @return [Member, User] the user that is executing this action. Can be a User object if the user no longer exists in the server.
+      # @return [Member, User] the user that authored this action. Can be a User object if the user no longer exists in the server.
       def user
         @user ||= @server.member(@data['user_id'].to_i) || @bot.user(@data['user_id'].to_i) || @logs.user(@data['user_id'].to_i)
       end
-      alias_method :executor, :user
       alias_method :author, :user
 
       # @return [Channel, nil] the amount of messages deleted. Won't be nil if the action is `:message_delete`.

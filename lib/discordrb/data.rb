@@ -3798,7 +3798,7 @@ module Discordrb
       def process_changes(changes)
         return unless changes
         changes.each do |element|
-          change = Change.new(element, @server)
+          change = Change.new(element, @server, @bot, self)
           @changes[change.key] = change
         end
       end
